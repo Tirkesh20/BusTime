@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class ParseUnknownXMLStructure
+public class ParserXml
 {
     public void Parse() throws ParserConfigurationException, SAXException, IOException
     {
@@ -36,7 +36,6 @@ public class ParseUnknownXMLStructure
 
         List<Service> services = visitChildNodes(nList);
         System.out.println(services);
-//        task-1 creation of parser.
 //            task-2 {
 //        -parse string time to date time
 //                -convert date time to millis time
