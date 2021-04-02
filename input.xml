@@ -1,0 +1,17 @@
+<Services>
+    <Service id="111">
+        <Name>Posh</Name>
+        <TimeFrom>10:00</TimeFrom>
+        <TimeTo>10:45</TimeTo>
+    </Service>
+    <Service id="222">
+        <Name>Grotty</Name>
+        <TimeFrom>10:00</TimeFrom>
+        <TimeTo>10:45</TimeTo>
+    </Service>
+    <Service id="333">
+        <Name>Posh</Name>
+        <TimeFrom>10:00</TimeFrom>
+        <TimeTo>10:45</TimeTo>
+    </Service>
+</Services>
