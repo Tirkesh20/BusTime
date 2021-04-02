@@ -36,6 +36,13 @@ public class ParseUnknownXMLStructure
 
         List<Service> services = visitChildNodes(nList);
         System.out.println(services);
+//        task-1 creation of parser.
+//            task-2 {
+//        -parse string time to date time
+//                -convert date time to millis time
+//                -service sorter by millis
+//    }
+//        task-3 create prioroty checker //comparator by name and time
 
 //        services.forEach(s->{
 //            s.
