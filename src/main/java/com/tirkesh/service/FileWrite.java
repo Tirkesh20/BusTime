@@ -1,6 +1,6 @@
+package com.tirkesh.service;
 
 import java.io.*;
-import java.util.List;
 
 public class FileWrite {
     public void write(String text) throws IOException {

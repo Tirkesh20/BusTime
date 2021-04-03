@@ -1,0 +1,7 @@
+<posh_Service>Posh 10:10 11:00<posh_Service>
+<posh_Service>Posh 10:15 11:10<posh_Service>
+<posh_Service>Posh 12:05 12:30<posh_Service>
+<posh_Service>Posh 17:25 18:01<posh_Service>
+
+<grotty_Service>Grotty 12:45 13:25<grotty_Service>
+<EOF>

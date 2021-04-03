@@ -1,6 +1,5 @@
-package Services;
+package com.tirkesh.service.timeConverter;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
@@ -9,12 +8,13 @@ import java.util.Date;
 
 
 public class TimeConverter {
-    public LocalTime toLocalTime(String time) throws ParseException {
+
+    public static LocalTime toLocalTime(String time) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         return LocalTime.parse(time, formatter);
     }
 
-    public Long toMillis(String time) {
+    public static Long toMillis(String time) {
         SimpleDateFormat f = new SimpleDateFormat("HH:mm");
         try {
             Date d = f.parse(time);
@@ -26,7 +26,7 @@ public class TimeConverter {
     }
 
 
-    public LocalTime milliToLocal(Long epoch) {
+    public static LocalTime milliToLocal(Long epoch) {
         LocalDateTime ldt = Instant.ofEpochMilli(epoch)
                 .atZone(ZoneId.systemDefault()).toLocalDateTime();
         return ldt.toLocalTime();

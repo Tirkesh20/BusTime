@@ -1,6 +1,6 @@
-package Services;
+package com.tirkesh.service.comparators;
 
-import Services.Service;
+import com.tirkesh.service.services.Service;
 
 import java.util.Comparator;
 

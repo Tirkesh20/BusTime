@@ -1,4 +1,6 @@
-package Services;
+package com.tirkesh.service.services;
+
+import com.tirkesh.service.timeConverter.TimeConverter;
 
 import java.util.Objects;
 
@@ -54,14 +56,21 @@ public class Service {
         return Objects.hash(CompanyName, departureTime, arriveTime);
     }
 
-    private TimeConverter timeConverter = new TimeConverter();
+
+    public String toXml(){
+        return "<" + CompanyName.toLowerCase() + "_Service>" +
+                CompanyName + " " +
+                TimeConverter.milliToLocal(departureTime).toString() + " " +
+                TimeConverter.milliToLocal(arriveTime).toString() +
+                "<" + CompanyName.toLowerCase() + "_Service>\n";
+    }
 
     @Override
     public String toString() {
-        return "<" + CompanyName.toLowerCase() + "_Service>" +
-                CompanyName + " " +
-                timeConverter.milliToLocal(departureTime).toString() + " " +
-                timeConverter.milliToLocal(arriveTime).toString() +
-                "<" + CompanyName.toLowerCase() + "_Service>\n";
+        return "Service{" +
+                "CompanyName='" + CompanyName + '\'' +
+                ", departureTime=" + departureTime +
+                ", arriveTime=" + arriveTime +
+                "}\n";
     }
 }
