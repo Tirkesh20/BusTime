@@ -8,6 +8,10 @@ import java.time.LocalTime;
 public class Main {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, ParseException, InterruptedException {
 //        ParserXml f=new ParserXml();
-//        f.Parse();
+            TimeConverter timeConverter=new TimeConverter();
+            timeConverter.toMillis();
+        System.out.println(timeConverter.milliToLocal(timeConverter.toMillis()));
+        System.out.println(timeConverter.toMillis());
+
     }
 }
