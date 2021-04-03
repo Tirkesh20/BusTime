@@ -1,3 +1,5 @@
+package Services;
+
 import java.util.Objects;
 
 public class Service {
@@ -6,6 +8,7 @@ public class Service {
     private long arriveTime;
 
     public Service() {
+
     }
 
     public Service(String companyName, long departureTime, long arriveTime) {
@@ -55,10 +58,10 @@ public class Service {
 
     @Override
     public String toString() {
-        return "Service{" +
-                "CompanyName='" + CompanyName + '\'' +
-                ", TimeFrom='" + timeConverter.milliToLocal(departureTime).toString() + '\'' +
-                ", TimeTo='" + timeConverter.milliToLocal(arriveTime).toString() + '\'' +
-                "}\n";
+        return "<" + CompanyName.toLowerCase() + "_Service>" +
+                CompanyName + " " +
+                timeConverter.milliToLocal(departureTime).toString() + " " +
+                timeConverter.milliToLocal(arriveTime).toString() +
+                "<" + CompanyName.toLowerCase() + "_Service>\n";
     }
 }
