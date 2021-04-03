@@ -1,47 +1,64 @@
+import java.util.Objects;
+
 public class Service {
     private String CompanyName;
-    private String TimeFrom;
-    private String TimeTo;
+    private long departureTime;
+    private long arriveTime;
 
     public Service() {
     }
 
-    public Service(String companyName, String timeFrom, String timeTo) {
+    public Service(String companyName, long departureTime, long arriveTime) {
         CompanyName = companyName;
-        TimeFrom = timeFrom;
-        TimeTo = timeTo;
+        this.departureTime = departureTime;
+        this.arriveTime = arriveTime;
     }
 
     public void setCompanyName(String companyName) {
         CompanyName = companyName;
     }
 
-    public String getTimeFrom() {
-        return TimeFrom;
+    public long getDepartureTime() {
+        return departureTime;
     }
 
-    @Override
-    public String toString() {
-        return "Service{" +
-                "CompanyName='" + CompanyName + '\'' +
-                ", TimeFrom='" + TimeFrom + '\'' +
-                ", TimeTo='" + TimeTo + '\'' +
-                "}\n";
-    }
-
-    public String getTimeTo() {
-        return TimeTo;
+    public long getArriveTime() {
+        return arriveTime;
     }
 
     public String getCompanyName() {
         return CompanyName;
     }
 
-    public void setTimeFrom(String timeFrom) {
-        TimeFrom = timeFrom;
+    public void setDepartureTime(long departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public void setTimeTo(String timeTo) {
-        TimeTo = timeTo;
+    public void setArriveTime(long arriveTime) {
+        this.arriveTime = arriveTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Service service = (Service) o;
+        return departureTime == service.departureTime && arriveTime == service.arriveTime && Objects.equals(CompanyName, service.CompanyName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(CompanyName, departureTime, arriveTime);
+    }
+
+    private TimeConverter timeConverter = new TimeConverter();
+
+    @Override
+    public String toString() {
+        return "Service{" +
+                "CompanyName='" + CompanyName + '\'' +
+                ", TimeFrom='" + timeConverter.milliToLocal(departureTime).toString() + '\'' +
+                ", TimeTo='" + timeConverter.milliToLocal(arriveTime).toString() + '\'' +
+                "}\n";
     }
 }

@@ -9,25 +9,24 @@ import java.util.Date;
 public class TimeConverter {
     public LocalTime toLocalTime(String time) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-        return  LocalTime.parse(time, formatter);
+        return LocalTime.parse(time, formatter);
     }
-    public Long toMillis() throws ParseException {
-        String string_date = "10:00";
+
+    public Long toMillis(String time) {
         SimpleDateFormat f = new SimpleDateFormat("HH:mm");
         try {
-            Date d = f.parse(string_date);
-             long milliseconds = d.getTime();
-             return milliseconds;
+            Date d = f.parse(time);
+            return d.getTime();
         } catch (ParseException e) {
-            e.printStackTrace();
+            System.out.println("time [ "+time +" ] can't be parsed ");
+            return 0L;
         }
-       return null;
     }
-    public LocalTime milliToLocal(Long epoch){
-       LocalDateTime ldt = Instant.ofEpochMilli(epoch)
+
+
+    public LocalTime milliToLocal(Long epoch) {
+        LocalDateTime ldt = Instant.ofEpochMilli(epoch)
                 .atZone(ZoneId.systemDefault()).toLocalDateTime();
-        LocalTime localTime=ldt.toLocalTime();
-        System.out.println(localTime);
-        return localTime;
+        return ldt.toLocalTime();
     }
 }
